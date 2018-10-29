@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import { Text, SafeAreaView } from 'react-native';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+
+import reducers from './reducers';
 
 class App extends Component {
   render() {
     return (
-      <View>
-        <Text>Hello!</Text>
-      </View>
+      <Provider store={createStore(reducers)}>
+        <SafeAreaView>
+          <Text>Hello!</Text>
+        </SafeAreaView>
+      </Provider>
     );
   }
 }
