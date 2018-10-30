@@ -4,14 +4,15 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import reducers from './reducers';
 import { Header } from './components/common';
+import LibraryList from './components/LibraryList';
 
 class App extends Component {
   render() {
     return (
       <Provider store={createStore(reducers)}>
-        <SafeAreaView>
+        <SafeAreaView style={{ flex: 1 }}>
           <Header title="Tech Stack" />
-          <Text>Hello!</Text>
+          <LibraryList />
         </SafeAreaView>
       </Provider>
     );
